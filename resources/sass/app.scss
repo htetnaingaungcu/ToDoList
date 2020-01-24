@@ -1,0 +1,23 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+form {
+    label {
+      color : Red;
+    }
+  
+    input { color : Green}
+  
+  
+  }
+
+  h1 {
+    font-size: 34px;
+    color: $blue;
+  }
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
