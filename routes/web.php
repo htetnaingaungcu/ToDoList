@@ -27,6 +27,7 @@ Route::get('/customer/login', 'CustomerController@loginForm');
 
 Route::post('/customer/login', 'CustomerController@login');
 
+
+Route::get('/to_do/login', 'ToDoListController@login');
+Route::post('/to_do/login', 'ToDoListController@toDoLogin');
 Route::resource('to_do_list', 'ToDoListController');
-Route::get('/todo_list/login', 'ToDoListController@toDoLogin');
-Route::post('/todo_list/login', 'ToDoListController@login');

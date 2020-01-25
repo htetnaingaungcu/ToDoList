@@ -38,6 +38,7 @@
 
 .todo_text>span {
     font-size: 13px;
+    color: #9e9e9e;
 }
 </style>
 

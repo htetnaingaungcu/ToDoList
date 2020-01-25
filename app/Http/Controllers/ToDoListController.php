@@ -16,8 +16,15 @@ class ToDoListController extends Controller
      */
     public function index()
     {
-        $to_dos = ToDoList::all();
-        return view('to_do_list.index', compact('to_dos'));
+        if(Auth::check()){
+            $to_dos = ToDoList::all();
+            return view('to_do_list.index', compact('to_dos'));
+        }else{
+            return redirect('/to_do/login');
+        }
+        
+        
+        
     }
 
     /**
@@ -93,20 +100,20 @@ class ToDoListController extends Controller
         //
     }
 
-    public function toDoLogin()
+    public function login()
     {
         if(Auth::check()) {
-            return redirect('/todo_list');
+            return redirect('/to_do_list');
         }else{
             return view('to_do_list.login');
         }
     }
 
-    public function login(LoginRequest $request) 
+    public function toDoLogin(LoginRequest $request) 
     {
-        Auth::attempt($request->validate());
+        Auth::attempt($request->validated());
         if(Auth::check()) {
-            return redirect('/todo_list');
+            return redirect('/to_do_list');
         } else {
             return "Login Fail";
         }
